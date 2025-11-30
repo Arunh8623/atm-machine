@@ -227,7 +227,12 @@ int main() {
     std::cout << "Algorithm: Greedy → DP (fallback)" << std::endl;
     std::cout << "========================================\n" << std::endl;
     
-    svr.listen("0.0.0.0", 8081);
+    int port = 8081;
+const char* port_env = std::getenv("PORT");
+if (port_env) {
+    port = std::atoi(port_env);
+}
+svr.listen("0.0.0.0", port);
 
     return 0;
 }
