@@ -1,4 +1,4 @@
-const API_URL = 'https://atm-machine-1-3ady.onrender.com';
+const API_URL = 'https://atm-machine-2-nsc3.onrender.com';
 const CORRECT_PIN = '8623';
 let currentPin = '';
 let loginAttempts = 0;
