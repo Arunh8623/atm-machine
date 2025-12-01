@@ -257,7 +257,8 @@ async function withdraw() {
         // Show loading with animation
         errorDiv.innerHTML = '<p class="text-blue-600 font-bold text-xl animate-pulse">⏳ Processing withdrawal... Please wait</p>';
         
-        const response = await fetch(API_URL, {
+        // FIXED: Add /dispense endpoint
+        const response = await fetch(`${API_URL}/dispense`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -281,7 +282,7 @@ async function withdraw() {
         console.error('Error:', error);
         
         if (error.message.includes('Failed to fetch')) {
-            errorDiv.innerHTML = '<p class="text-red-600 font-bold text-xl">❌ Cannot connect to server! Make sure C++ backend is running on port 8081.</p>';
+            errorDiv.innerHTML = '<p class="text-red-600 font-bold text-xl">❌ Cannot connect to server! Please check if backend is running.</p>';
         } else {
             errorDiv.innerHTML = `<p class="text-red-600 font-bold text-xl">❌ ${error.message}</p>`;
         }
