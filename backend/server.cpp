@@ -228,11 +228,11 @@ int main() {
     std::cout << "========================================\n" << std::endl;
     
     int port = 8081;
-const char* port_env = std::getenv("PORT");
-if (port_env) {
-    port = std::atoi(port_env);
-}
-svr.listen("0.0.0.0", port);
+    const char* port_env = std::getenv("PORT");
+    if (port_env) {
+        port = std::atoi(port_env);
+    }
+    svr.listen("0.0.0.0", port);
 
     return 0;
 }
