@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:8081/dispense';
+const API_URL = 'https://atm-machine-1-3ady.onrender.com';
 const CORRECT_PIN = '8623';
 let currentPin = '';
 let loginAttempts = 0;
